@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f0df, #e5e5e5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 15px;
+        }
+
+        h1 {
+            color: #96720c;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .card {
+            width: 380px;
+            max-width: 100%;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+            margin-bottom: 18px;
+        }
+
+        .card h2 {
+            color: #96720c;
+            margin-bottom: 18px;
+            font-size: 22px;
+        }
+
+        .card p {
+            color: #555;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .present {
+            background: #d4edda;
+            color: #093f16ca !important;
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        .absent {
+            background: #f8d7da;
+            color: #721c24 !important;
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background: #b58a16;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 7px;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .back-btn:hover {
+            background: #92700e;
+        }
+    </style>
+</head>
+
+<body>
+
+    {% if std %}
+
+    <h1>Details Page of Student {{ std[1] }}</h1>
+
+    <div class="card">
+
+        <img src="{{ std[6] }}" alt="Student Image">
+
+        <h2>Name: {{ std[1] }}</h2>
+
+        <p>Age: {{ std[2] }}</p>
+
+        <p>Gender: {{ std[3] }}</p>
+
+        <p>Marks: {{ std[4] }}</p>
+
+        <p>Course: {{ std[5] }}</p>
+
+        {% if std[7] %}
+            <p class="present">Present</p>
+        {% else %}
+            <p class="absent">Absent</p>
+        {% endif %}
+
+    </div>
+
+    {% else %}
+
+    <h1>Student Not Found!</h1>
+
+    {% endif %}
+
+    <a href="/" class="back-btn">Back to Home</a>
+
+</body>
+</html>

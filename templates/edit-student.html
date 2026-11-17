@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Student</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f0df, #e5e5e5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 420px;
+            max-width: 100%;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        h2 {
+            text-align: center;
+            color: #96720c;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 18px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            font-size: 15px;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            background: #b58a16;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #92700e;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Update Student {{ std[1] }}</h2>
+
+        <form action="/students/edit/{{std[0]}}" method="POST">
+
+            <label>Name:</label>
+            <input type="text" name="name" required value="{{ std[1] }}">
+
+            <label>Age:</label>
+            <input type="number" name="age" required value="{{ std[2] }}">
+
+            <label>Gender:</label>
+            <input type="text" name="gender" required value="{{ std[3] }}">
+
+            <label>Marks:</label>
+            <input type="number" name="marks" required value="{{ std[4] }}">
+
+            <label>Course:</label>
+            <input type="text" name="course" required value="{{ std[5] }}">
+
+            <label>Image:</label>
+            <input type="text" name="image" required value="{{ std[6] }}">
+
+            <label>Attendance:</label>
+            <select name="status">
+                <option value="1">Present</option>
+                <option value="0">Absent</option>
+            </select>
+
+            <button type="submit">Update Student</button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>

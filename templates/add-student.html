@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f0df, #e5e5e5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .form-container {
+            width: 420px;
+            max-width: 100%;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        h2 {
+            text-align: center;
+            color: #96720c;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 18px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            font-size: 15px;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            background: #b58a16;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #92700e;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+
+        <h2>Add new student</h2>
+
+        <form action="/students/add" method="POST">
+
+            <label>Name:</label>
+            <input type="text" name="name" required>
+
+            <label>Age:</label>
+            <input type="text" name="age" required>
+
+            <label>Gender:</label>
+            <input type="text" name="gender" required>
+
+            <label>Marks:</label>
+            <input type="text" name="marks" required>
+
+            <label>Course:</label>
+            <input type="text" name="course" required>
+
+            <label>Image:</label>
+            <input type="text" name="image" required>
+
+            <label>Attendance:</label>
+            <select name="status">
+                <option value="1">Present</option>
+                <option value="0">Absent</option>
+            </select>
+
+            <button type="submit">Add student</button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
+
+
+
