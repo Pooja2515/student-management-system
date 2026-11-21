@@ -8,7 +8,7 @@ A web-based Student Management System developed using **Python FastAPI, Jinja2, 
 - View individual student details
 - Update student information
 - Delete student records
-- Validate student data using Pydantic
+- Validate student data
 
 ## Technologies Used
 - Python
